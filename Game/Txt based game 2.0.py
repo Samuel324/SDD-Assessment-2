@@ -34,7 +34,7 @@ class Player:
         self.name = name
         self.health = health
 
-p = Player(20, 1)
+p = Player(1, 20)
 
 def Attack(m1):
      x = (1)
@@ -53,34 +53,7 @@ def Damaged(m1):
 
 
 def Fight1():
-    m1 = Monster(random.choice(_monsters1), random.randint(3,5))
-    print("You see a monster!")
-    print("Monster Name: ", m1.name)
-    while m1.health >0 and p.health:
-        print("Monster HP: ", str(m1.health))
-        print("Player HP: ", str(p.health))
-        response = input([_fight, _block, _run, _inventory1], "What will you do? ")
-        if response.lower() in _fight():
-            Attack(m1)
-        elif response.lower() in _block:
-            x = random.randint(1,3)
-            if x < 3:
-                fastype("You blocked the Mosters attack.")
-                if x == 1:
-                    fastype("you countered for")
-                    CritHit(m1)
-            elif x == 3:
-                fastype("Your attempt at a block failed...")
-        elif response.lower() in _run:
-            x = random.randint(1,2)
-            if x == 1:
-                ran = True
-                break
-            elif x==0:
-                fastype("you're a slow runner...")
-                Damaged(m1)
-        elif response.lower() in _inventory1:
-            _inventory1()
+    x = _monsters1[random.choice(0,4)]
         
 
         
@@ -223,5 +196,5 @@ while True:
         break
     elif investigate1.lower() == "no" or investigate1.lower() == "n":
         slowtype("You chose to ignore the noise\n")
-        slowtype("You start to return to your shack. . .\nBut then!\n")()
+        slowtype("You start to return to your shack. . .\nBut then!\n")
 Fight1()
