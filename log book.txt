@@ -1,0 +1,16 @@
+Date: 25 . 5 . 21
+what got done: started log book 
+on ver 1.2 tinkered with the character selection code, but just removed a character. (karol) forever missed
+I have worked on this project at least 10 times prior but sinc ei didn't start the lof book (oops) it starts here,
+the other stuff is mostly ascii art and me trying to build reference.
+
+
+Date: 28 . 5 . 21 
+I have restarted the game as it wasn't going in the direction I wanted it to.
+i removed all the ascii art as it was annoying to work with
+
+I have made multiple arrays and functions for my monsters and locations
+
+Date 29 / 5 / 21 start 10am
+
+
