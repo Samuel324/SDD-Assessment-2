@@ -1,3 +1,4 @@
+
 # G E N E R I C    F I G H T I N G    G A M E
 import time
 import sys
@@ -88,6 +89,8 @@ def fasttravel():
             print("thats not a location you can fast travel to...")
         break
 
+p = Player()
+
 slowtype("What is your characters name? ")
 PlayerName = input("\n> ").capitalize()
 slowtype("Lets get started then.\n")
@@ -171,7 +174,7 @@ while True:
     if Movehay.lower() == "travel to barn":
         slowtype("You struggled over to the barn\n")
         break
-    elif Movehay.lower == "no" or Movehay.lower() == "n":
+    elif Movehay.lower() == "no" or Movehay.lower() == "n":
         slowtype("You must go to the barn to comnplete the prologue\n")
 
 slowtype(" Place the hay down [drop hay]\n")
