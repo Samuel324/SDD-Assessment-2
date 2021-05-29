@@ -1,12 +1,15 @@
 
-# G E N E R I C    F I G H T I N G    G A M E
+# SAM'S MEDIEVAL FIGHTING GAME
 import time
 import sys
 from time import sleep
 import random
 import os
-from typing import NamedTuple
-inventory = ["empty", "empty", "empty", "empty"]
+
+_inventory1 = ["Inventory", "Inv", "I"]
+_fight = ["ATTACK", "A"]
+_block = ["BLOCK", "B"]
+_run = ["RUN", "R"]
 
 _monsters1 =["Comically Large Snail :O", "Swarm Of Gentle Bees :)", "angry ladybug D:<", "A Living Trumpet (how!?)", "The Colour Purple (I think its angry)"]
 _monsters2 =["wild Dog", "Pit Of Snakes", "Bandit", "Wolf", "Stray Cat", "Hog"]
@@ -45,6 +48,7 @@ def Damaged(m1):
     p.health -= x
     slowtype("The" + m1.name + "hit you for " + str(x))
 
+
 def Fight1():
     m1 = Monster(random.choice(_monsters1), random.randint(3,5))
     print("You see a monster!")
@@ -52,7 +56,13 @@ def Fight1():
     while m1.health >0 and p.health:
         print("Monster HP: ", str(m1.health))
         print("Player HP: ", str(p.health))
-        response = 
+        response = input([_fight, _block, _run, _inventory1], "What will you do? ")
+        if response.lower() in _fight():
+            Attack(m1)
+        elif response.lower() in _block:
+            x = random.randint(1,3)
+            if x == 1:
+                fastype("You blocked the Mosters attack.")
         
 def dead():
     slowtype("You died, better luck next time.") 
