@@ -33,7 +33,8 @@ class Player:
     def __init__(self, name, health):
         self.name = name
         self.health = health
-p = ClassVar(Player)
+
+p = Player(20, 1)
 
 def Attack(m1):
      x = (1)
