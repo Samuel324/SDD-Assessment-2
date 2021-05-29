@@ -5,7 +5,6 @@ import sys
 from time import sleep
 import random
 import os
-from typing import ClassVar
 
 _inventory1 = ["Inventory", "Inv", "I"]
 _fight = ["ATTACK", "A"]
@@ -53,7 +52,18 @@ def Damaged(m1):
 
 
 def Fight1():
-    x = _monsters1[random.choice(0,4)]
+    x = _monsters1[random.randint(0,4)]
+    print(x + " has appeared, your instinct tells you to fight. [fight]")
+    while True:
+        _fight = input("\n> ")
+        if _fight.lower == "fight":
+            Attack()
+            Damaged()
+            break
+        else:
+            fastype("you can only fight this monster")
+
+
         
 
         
@@ -72,7 +82,7 @@ def _help():
 
 def slowtype(text):
     for char in text:
-        sleep(0.05)
+        sleep(0.0005)
         sys.stdout.write(char)
 def fastype(text):
     for char in text:
