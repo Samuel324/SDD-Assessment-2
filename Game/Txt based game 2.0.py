@@ -5,6 +5,7 @@ import sys
 from time import sleep
 import random
 import os
+from typing import ClassVar
 
 _inventory1 = ["Inventory", "Inv", "I"]
 _fight = ["ATTACK", "A"]
@@ -32,6 +33,7 @@ class Player:
     def __init__(self, name, health):
         self.name = name
         self.health = health
+p = ClassVar(Player)
 
 def Attack(m1):
      x = (1)
@@ -61,8 +63,25 @@ def Fight1():
             Attack(m1)
         elif response.lower() in _block:
             x = random.randint(1,3)
-            if x == 1:
+            if x < 3:
                 fastype("You blocked the Mosters attack.")
+                if x == 1:
+                    fastype("you countered for")
+                    CritHit(m1)
+            elif x == 3:
+                fastype("Your attempt at a block failed...")
+        elif response.lower() in _run:
+            x = random.randint(1,2)
+            if x == 1:
+                ran = True
+                break
+            elif x==0:
+                fastype("you're a slow runner...")
+                Damaged(m1)
+        elif response.lower() in _inventory1:
+            _inventory1()
+        
+
         
 def dead():
     slowtype("You died, better luck next time.") 
@@ -98,8 +117,6 @@ def fasttravel():
         else:
             print("thats not a location you can fast travel to...")
         break
-
-p = Player()
 
 slowtype("What is your characters name? ")
 PlayerName = input("\n> ").capitalize()
@@ -205,5 +222,5 @@ while True:
         break
     elif investigate1.lower() == "no" or investigate1.lower() == "n":
         slowtype("You chose to ignore the noise\n")
-        slowtype("You start to return to your shack. . .\nBut then!\n")
-
+        slowtype("You start to return to your shack. . .\nBut then!\n")()
+Fight1()
