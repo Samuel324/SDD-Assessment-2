@@ -56,7 +56,7 @@ def Fight1():
 def dead():
     slowtype("You died, better luck next time.") 
     time.sleep(1)
-    exit 
+    exit()
 
 def _help():
     print("\nYou can fast travel between major cities with [fasttravel x], but you must be in a major city to do so.")
